@@ -1,4 +1,4 @@
-Job Portal
+## Job Portal
 A comprehensive Job Portal web application that connects job seekers with employers. Built using the MERN stack (MongoDB, Express.js, React.js, Node.js), it provides users with a platform to search and apply for jobs, and employers to post and manage job listings.
 
 
