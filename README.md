@@ -12,7 +12,7 @@ A comprehensive Job Portal web application that connects job seekers with employ
 - **Frontend**: React, Tailwind CSS
 - **Backend**: Node.js, Express
 - **Database**: MongoDB
-- **Authentication**: JWT
+- **Authentication**: JWT and Bcryptjs
 
 
 ## Installation
