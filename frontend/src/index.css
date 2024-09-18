@@ -1,4 +1,37 @@
-/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+import "@headlessui/react/styles.css"; 
+
+body {
+  @apply font-sans; /* Apply the Lato font globally */
+}
+:root {
+  --primary: #1e3a8a; /* Navy Blue */
+  --secondary: #9ca3af; /* Light Gray */
+  --accent: #f59e0b; /* Amber */
+  --background: #f9fafb; /* Off-White */
+  --text: #111827; /* Charcoal Black */
+}
+
+/* Use CSS variables */
+.bg-background {
+  background-color: var(--background);
+}
+
+.text-text {
+  color: var(--text);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}

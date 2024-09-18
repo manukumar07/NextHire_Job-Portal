@@ -1,34 +1,116 @@
-// src/App.jsx
-// import React from "react";
-import Jobs from "./Components/Pages/Jobs";
-import About from "./Components/Pages/About";
-import Home from "./Components/Home";
-import Navbar from "./Components/Pages/Navbar";
-import Login from "./Components/Pages/Login";
-import Contact from "./Components/Pages/Contact";
-import Signup from "./Components/Pages/Signup";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // If using React Router
-import Footer from "./Components/Pages/Footer";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Login from "./components/auth/Login";
+import Signup from "./components/auth/Signup";
+import Home from "./components/Home";
+import Contact from "./components/Contact";
+import Browse from "./components/Browse";
+import JobDescription from "./components/JobDescription";
+import Jobs from "./components/Jobs";
+import Profile from "./components/Profile";
+import Companies from "./components/admin/Companies";
+import ProtectedRoute from "./components/admin/ProtectedRoute";
+import CompanyCreate from "./components/admin/ComapnyCreate";
+import CompanySetup from "./components/admin/CompanySetup";
+import PostJob from "./components/admin/PostJob";
+import AdminJobs from "./components/admin/AdminJobs";
+import Applicants from "./components/admin/applicants";
+import About from "./components/About";
+//
 
-const App = () => {
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+  {
+    path: "/jobs",
+    element: <Jobs />,
+  },
+  {
+    path: "/description/:id",
+    element: <JobDescription />,
+  },
+  {
+    path: "/browse",
+    element: <Browse />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
+  },
+
+  // admin panel links
+  {
+    path: "/admin/companies",
+    element: (
+      <ProtectedRoute>
+        <Companies />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/admin/companies/create",
+    element: (
+      <ProtectedRoute>
+        <CompanyCreate />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/admin/companies/:id",
+    element: (
+      <ProtectedRoute>
+        <CompanySetup />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/admin/jobs",
+    element: (
+      <ProtectedRoute>
+        <AdminJobs />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/admin/jobs/create",
+    element: (
+      <ProtectedRoute>
+        <PostJob />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/admin/jobs/:id/applicants",
+    element: (
+      <ProtectedRoute>
+        <Applicants />
+      </ProtectedRoute>
+    ),
+  },
+]);
+function App() {
   return (
-    <Router>
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-1 p-4 bg-gray-100">
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/jobs" element={<Jobs />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <div>
+      <RouterProvider router={appRouter} />
+    </div>
   );
-};
+}
 
 export default App;
