@@ -21,6 +21,8 @@ A comprehensive Job Portal web application that connects job seekers with employ
 ![nexthire3](https://github.com/user-attachments/assets/ff8aaec2-08c8-4b42-9fdb-e29dc06221d3)
 ![nexthire4](https://github.com/user-attachments/assets/312a4312-ab93-4f8a-bc43-4c1f226cc479)
 ![nexthire5](https://github.com/user-attachments/assets/324cfc2c-cab1-45d0-b091-3b65aaa8a3db)
+![nexthire6](https://github.com/user-attachments/assets/1d444c81-bdc8-48e4-ad5d-9e2d19685282)
+
 
 
 
