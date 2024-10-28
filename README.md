@@ -1,13 +1,15 @@
 
-Job Portal 💼
+## Job Portal 💼
 A comprehensive Job Portal web application that connects job seekers with employers. Built using the MERN stack (MongoDB, Express.js, React.js, Node.js), it provides users with a platform to search and apply for jobs, while employers can post and manage job listings.
 
-Features 🌟
+## Features 🌟
 🔑 User authentication for job seekers and employers
 🔍 Job search with filters by category and location
 📝 Employers can post, edit, and delete jobs
 📊 Admin dashboard for managing users and jobs
-Tech Stack 🛠️
+
+
+## Tech Stack 🛠️
 Frontend: React, Tailwind CSS
 Backend: Node.js, Express
 Database: MongoDB
