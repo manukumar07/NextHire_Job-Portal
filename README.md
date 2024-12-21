@@ -1,19 +1,25 @@
+# Job Portal 💼
 
-## Job Portal 💼
 A comprehensive Job Portal web application that connects job seekers with employers. Built using the MERN stack (MongoDB, Express.js, React.js, Node.js), it provides users with a platform to search and apply for jobs, while employers can post and manage job listings.
 
-## Features 🌟
-🔑 User authentication for job seekers and employers
-🔍 Job search with filters by category and location
-📝 Employers can post, edit, and delete jobs
-📊 Admin dashboard for managing users and jobs
+
+## 🌟 Features
+- 🔑 **User Authentication**  
+  Secure login and registration for job seekers and employers using **JWT** and **bcryptjs**.
+- 🔍 **Job Search with Filters**  
+  Search jobs by categories, location, and keywords to find relevant opportunities.
+- 📝 **Employer Functionalities**  
+  Employers can post, edit, and delete job listings with ease.
+- 📊 **Admin Dashboard**  
+  A centralized dashboard for admins to manage users and jobs.
 
 
-## Tech Stack 🛠️
-Frontend: React, Tailwind CSS
-Backend: Node.js, Express
-Database: MongoDB
-Authentication: JWT and Bcryptjs
+## 🛠️ Tech Stack
+- **Frontend**: React, Tailwind CSS  
+- **Backend**: Node.js, Express.js  
+- **Database**: MongoDB  
+- **Authentication**: JWT (JSON Web Tokens), Bcryptjs  
+
 
 ## Screenshots
 ![nexthire](https://github.com/user-attachments/assets/9b22835b-58c3-43ee-82d9-c6a926d3429e)
@@ -24,8 +30,8 @@ Authentication: JWT and Bcryptjs
 ![nexthire6](https://github.com/user-attachments/assets/1d444c81-bdc8-48e4-ad5d-9e2d19685282)
 
 
-## Usage 📋
-Job Seekers: 🔍 Search and apply for jobs.
-Employers: 📝 Post and manage job listings.
-Admins: 👨‍💼 Manage users and oversee job postings.
+## 📋 Usage
+- **Job Seekers**: 🔍 Search and apply for jobs.  
+- **Employers**: 📝 Post and manage job listings.  
+- **Admins**: 👨‍💼 Manage users and oversee job postings.
 
