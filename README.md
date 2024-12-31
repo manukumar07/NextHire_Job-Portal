@@ -15,7 +15,7 @@ A comprehensive Job Portal web application that connects job seekers with employ
 
 
 ## 🛠️ Tech Stack
-- **Frontend**: React, Tailwind CSS  
+- **Frontend**: React, Tailwind CSS , Javascript  
 - **Backend**: Node.js, Express.js  
 - **Database**: MongoDB  
 - **Authentication**: JWT (JSON Web Tokens), Bcryptjs  
