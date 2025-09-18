@@ -8,11 +8,11 @@ const ProtectedRoute = ({ children }) => {
 
   useEffect(() => {
     if (!user || user.role !== "recruiter") {
-      navigate("/"); // Redirect if user is not authenticated or not a recruiter
+      navigate("/");
     }
-  }, [user, navigate]); // Include user and navigate in the dependency array
+  }, [user, navigate]);
 
-  return <>{children}</>; // Ensure children are rendered properly
+  return <>{children}</>;
 };
 
 export default ProtectedRoute;

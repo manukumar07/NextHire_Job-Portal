@@ -1,21 +1,21 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./components/auth/Login";
-import Signup from "./components/auth/Signup";
-import Home from "./components/Home";
-import Contact from "./components/Contact";
-import Browse from "./components/Browse";
-import JobDescription from "./components/JobDescription";
-import Jobs from "./components/Jobs";
-import Profile from "./components/Profile";
-import Companies from "./components/admin/Companies";
-import ProtectedRoute from "./components/admin/ProtectedRoute";
-import CompanyCreate from "./components/admin/ComapnyCreate";
-import CompanySetup from "./components/admin/CompanySetup";
-import PostJob from "./components/admin/PostJob";
-import AdminJobs from "./components/admin/AdminJobs";
-import Applicants from "./components/admin/applicants";
-import About from "./components/About";
-//
+import Login from "./Components/auth/Login";
+import Signup from "./Components/auth/Signup";
+import Contact from "./pages/Contact";
+import Browse from "./pages/Browse";
+import Home from "./pages/Home";
+import JobDescription from "./Components/jobs/JobDescription";
+import Jobs from "./pages/Jobs";
+import Profile from "./Components/layout/Profile";
+import Companies from "./Components/admin/Companies";
+import ProtectedRoute from "./Components/admin/ProtectedRoute";
+import CompanyCreate from "./Components/admin/ComapnyCreate";
+import CompanySetup from "./Components/admin/CompanySetup";
+import PostJob from "./Components/admin/PostJob";
+import AdminJobs from "./Components/admin/AdminJobs";
+import Applicants from "./Components/admin/Applicants";
+import About from "./pages/About";
+import NotFound from "./pages/NotFound";
 
 const appRouter = createBrowserRouter([
   {
@@ -53,6 +53,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/profile",
     element: <Profile />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 
   // admin panel links

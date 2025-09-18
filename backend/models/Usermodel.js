@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import bcrypt from "bcryptjs"
+
 
 const userSchema = new mongoose.Schema(
   {
@@ -21,15 +23,15 @@ const userSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      enum: ["admin", "user", "recruiter", "student"], // Fixed the typo 'recuriter' to 'recruiter'
+      enum: ["admin", "user", "recruiter", "student"],
       required: true,
     },
     profile: {
       bio: { type: String },
       skills: [{ type: String }],
-      resume: { type: String }, // URL to resume file
+      resume: { type: String },
       resumeOriginalName: { type: String },
-      company: { type: mongoose.Schema.Types.ObjectId, ref: "Company" }, // Fixed typo 'comapny' to 'Company'
+      company: { type: mongoose.Schema.Types.ObjectId, ref: "Company" },
       profilePhoto: {
         type: String,
         default: "",
@@ -38,5 +40,18 @@ const userSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+// 🔑 Hash password before saving
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) return next();
+  this.password = await bcrypt.hash(this.password, 10);
+  next();
+});
+
+// 🔑 Compare password method
+userSchema.methods.comparePassword = async function (enteredPassword) {
+  return await bcrypt.compare(enteredPassword, this.password);
+};
+
 
 export const User = mongoose.model("User", userSchema);

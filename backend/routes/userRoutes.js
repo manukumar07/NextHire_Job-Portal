@@ -12,7 +12,9 @@ import { singleUpload } from "../middleware/multer.js";
 router.post("/register", singleUpload, register);
 router.post("/login", login);
 router.get("/logout", logout);
-//if authenticated user can only update the profile
+
+
+
 router.post("/profile/update", isAuthenticated, singleUpload, updateProfile);
 
 export default router;

@@ -2,17 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-import "@headlessui/react/styles.css"; 
+import "@headlessui/react/styles.css";
 
 body {
-  @apply font-sans; /* Apply the Lato font globally */
+  @apply font-sans;
+  /* Apply the Lato font globally */
 }
+
 :root {
-  --primary: #1e3a8a; /* Navy Blue */
-  --secondary: #9ca3af; /* Light Gray */
-  --accent: #f59e0b; /* Amber */
-  --background: #f9fafb; /* Off-White */
-  --text: #111827; /* Charcoal Black */
+  --primary: #1e3a8a;
+  --secondary: #9ca3af;
+  --accent: #f59e0b;
+  --background: #f9fafb;
+  --text: #111827;
 }
 
 /* Use CSS variables */

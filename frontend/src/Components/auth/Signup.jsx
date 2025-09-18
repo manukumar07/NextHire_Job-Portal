@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import Navbar from "../Navbar";
+import Navbar from "../layout/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
-import Footer from "../Footer";
-// import { USER_API_END_POINT } from "../../utils/constant";
+import Footer from "../layout/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading } from "../../redux/authSlice";
 import axios from "axios";
+import { motion } from "framer-motion";
 
 const Signup = () => {
   const [input, setInput] = useState({
@@ -18,6 +18,7 @@ const Signup = () => {
     role: "",
     file: "",
   });
+
   const { loading, user } = useSelector((store) => store.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -29,7 +30,6 @@ const Signup = () => {
     setInput({ ...input, file: e.target.files?.[0] });
   };
 
-  //
   const submitHandler = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -39,11 +39,10 @@ const Signup = () => {
     formData.append("password", input.password);
     formData.append("role", input.role);
     if (input.file) {
-      formData.append("file", input.file); // Ensure 'file' is appended
+      formData.append("file", input.file);
     }
 
     try {
-      // dispatch(setLoading(true));
       const res = await axios.post(
         "http://localhost:8000/api/v1/user/register",
         formData,
@@ -55,15 +54,14 @@ const Signup = () => {
       if (res.data.success) {
         navigate("/login");
         toast.success(res.data.message);
-        console.log("Data recieved", res.data);
       }
     } catch (error) {
-      console.log(error);
       toast.error(error.response?.data?.message || "An error occurred.");
     } finally {
       dispatch(setLoading(false));
     }
   };
+
   useEffect(() => {
     if (user) {
       navigate("/");
@@ -72,17 +70,18 @@ const Signup = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gray-100 flex flex-col ">
+      <div className="min-h-screen bg-gradient-to-br from-[#1E3A8A] via-[#6A38C2] to-[#f0bb60] flex flex-col">
         <Navbar />
-        <div className="flex items-center justify-center flex-1 p-4">
+        <div className="flex items-center justify-center flex-1 p-4 mt-24 mb-10">
           <form
             onSubmit={submitHandler}
-            className="w-full max-w-lg bg-white border border-gray-300 rounded-lg shadow-lg p-8"
+            className="w-full max-w-lg bg-white/90 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-2xl p-8 transition-transform transform hover:scale-[1.01]"
           >
-            <h1 className="text-3xl font-semibold mb-6 text-[#1E3A8A] text-center">
-              Sign Up
+            {/* Heading with Animated Icon */}
+            <h1 className="text-3xl font-bold mb-6 text-center text-[#1E3A8A]">
+              Create Account
             </h1>
-
+            {/* Fullname */}
             <div className="mb-2">
               <label
                 htmlFor="fullname"
@@ -96,11 +95,12 @@ const Signup = () => {
                 value={input.fullname}
                 name="fullname"
                 onChange={changeEventHandler}
-                placeholder="Enter a name"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#1E3A8A] focus:border-[#1E3A8A]"
+                placeholder="Enter your full name"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#6A38C2] focus:border-[#6A38C2] transition-colors"
               />
             </div>
 
+            {/* Email */}
             <div className="mb-4">
               <label
                 htmlFor="email"
@@ -115,10 +115,11 @@ const Signup = () => {
                 name="email"
                 onChange={changeEventHandler}
                 placeholder="example@example.com"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#1E3A8A] focus:border-[#1E3A8A]"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#6A38C2] focus:border-[#6A38C2] transition-colors"
               />
             </div>
 
+            {/* Phone Number */}
             <div className="mb-4">
               <label
                 htmlFor="phoneNumber"
@@ -133,10 +134,11 @@ const Signup = () => {
                 name="phoneNumber"
                 onChange={changeEventHandler}
                 placeholder="1234567890"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#1E3A8A] focus:border-[#1E3A8A]"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#6A38C2] focus:border-[#6A38C2] transition-colors"
               />
             </div>
 
+            {/* Password */}
             <div className="mb-4">
               <label
                 htmlFor="password"
@@ -151,47 +153,47 @@ const Signup = () => {
                 name="password"
                 onChange={changeEventHandler}
                 placeholder="••••••••"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#1E3A8A] focus:border-[#1E3A8A]"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#6A38C2] focus:border-[#6A38C2] transition-colors"
               />
             </div>
 
-            <div className="mb-4">
-              <radioGroup className="flex items-center gap-6">
-                <div className="flex items-center space-x-2">
-                  <input
-                    id="student"
-                    type="radio"
-                    name="role"
-                    value="student"
-                    checked={input.role === "student"}
-                    onChange={changeEventHandler}
-                    className="h-4 w-4 text-[#1E3A8A] border-gray-300 focus:ring-[#1E3A8A]"
-                  />
-                  <label htmlFor="student" className="text-sm text-gray-700">
-                    Student
-                  </label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <input
-                    id="recruiter"
-                    type="radio"
-                    name="role"
-                    value="recruiter"
-                    checked={input.role === "recruiter"}
-                    onChange={changeEventHandler}
-                    className="h-4 w-4 text-[#1E3A8A] border-gray-300 focus:ring-[#1E3A8A]"
-                  />
-                  <label htmlFor="recruiter" className="text-sm text-gray-700">
-                    Recruiter
-                  </label>
-                </div>
-              </radioGroup>
+            {/* Role Selection */}
+            <div className="mb-4 flex items-center gap-6">
+              <div className="flex items-center space-x-2">
+                <input
+                  id="student"
+                  type="radio"
+                  name="role"
+                  value="student"
+                  checked={input.role === "student"}
+                  onChange={changeEventHandler}
+                  className="h-4 w-4 text-[#1E3A8A] border-gray-300 focus:ring-[#F59E0B]"
+                />
+                <label htmlFor="student" className="text-sm text-gray-700">
+                  Student
+                </label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <input
+                  id="recruiter"
+                  type="radio"
+                  name="role"
+                  value="recruiter"
+                  checked={input.role === "recruiter"}
+                  onChange={changeEventHandler}
+                  className="h-4 w-4 text-[#1E3A8A] border-gray-300 focus:ring-[#F59E0B]"
+                />
+                <label htmlFor="recruiter" className="text-sm text-gray-700">
+                  Recruiter
+                </label>
+              </div>
             </div>
 
+            {/* Profile Pic */}
             <div className="mb-4 flex items-center space-x-4">
               <label
                 htmlFor="file"
-                className="block text-sm font-small text-gray-700"
+                className="block text-sm font-medium text-gray-700"
               >
                 Profile Pic
               </label>
@@ -204,26 +206,29 @@ const Signup = () => {
               />
             </div>
 
-            <button
+            {/* Gradient Button */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               type="submit"
-              className={`w-full py-2 px-4 rounded-md text-white ${
-                loading
-                  ? "bg-[#1E3A8A] cursor-wait"
-                  : "bg-[#6A38C2] hover:bg-[#5b30a6]"
-              } focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]`}
+              className={`w-full py-2 px-4 rounded-md text-white font-semibold shadow-md bg-gradient-to-r from-[#1E3A8A] via-[#6A38C2] to-[#F59E0B] hover:opacity-90 transition-all duration-300`}
             >
               {loading ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait
-                </>
+                <div className="flex items-center justify-center gap-2">
+                  <Loader2 className="h-4 w-4 animate-spin" /> Please wait
+                </div>
               ) : (
                 "Sign Up"
               )}
-            </button>
+            </motion.button>
 
-            <div className="mt-4 text-center text-sm text-gray-600">
+            {/* Footer */}
+            <div className="mt-4 text-center text-sm text-gray-700">
               Already have an account?{" "}
-              <Link to="/login" className="text-[#1E3A8A] hover:underline">
+              <Link
+                to="/login"
+                className="text-[#6A38C2] font-medium hover:underline hover:text-[#F59E0B] transition-colors"
+              >
                 Login
               </Link>
             </div>

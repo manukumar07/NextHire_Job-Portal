@@ -37,7 +37,6 @@ const jobSchema = new mongoose.Schema({
     required: true,
   },
   created_by: {
-    // Corrected this line
     type: mongoose.Schema.Types.ObjectId,
     ref: "User", // Make sure the ref matches the actual model name
     required: true,
