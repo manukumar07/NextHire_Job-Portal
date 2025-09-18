@@ -1,25 +1,40 @@
 # Job Portal 💼
 
-A comprehensive Job Portal web application that connects job seekers with employers. Built using the MERN stack (MongoDB, Express.js, React.js, Node.js), it provides users with a platform to search and apply for jobs, while employers can post and manage job listings.
+ > A full-stack **MERN Job Portal** connecting job seekers with employers.  
+Job seekers can search/apply for jobs, employers can post/manage listings, and admins control everything from a central dashboard.
 
+---
 
 ## 🌟 Features
-- 🔑 **User Authentication**  
-  Secure login and registration for job seekers and employers using **JWT** and **bcryptjs**.
-- 🔍 **Job Search with Filters**  
-  Search jobs by categories, location, and keywords to find relevant opportunities.
-- 📝 **Employer Functionalities**  
-  Employers can post, edit, and delete job listings with ease.
-- 📊 **Admin Dashboard**  
-  A centralized dashboard for admins to manage users and jobs.
+- 🔑 Role-based Auth (Job Seeker, Employer, Admin) – JWT + bcryptjs  
+- 🔍 Job search with filters (category, location, keywords, salary)  
+- 📝 Employers can post, edit & delete jobs  
+- 📊 Admin dashboard for managing users & jobs  
+- ☁️ Cloudinary for resume/logo storage  
 
+---
 
 ## 🛠️ Tech Stack
-- **Frontend**: React, Tailwind CSS , Javascript  
+- **Frontend**: React, Tailwind CSS, Redux Toolkit, JavaScript  
 - **Backend**: Node.js, Express.js  
 - **Database**: MongoDB  
-- **Authentication**: JWT (JSON Web Tokens), Bcryptjs  
+- **Authentication**: JWT, bcryptjs  
+- **Other**: Cloudinary, Lucide-React, React-Icons  
 
+---
+
+
+## ⚡ Quick Start
+```bash
+# Backend
+cd backend
+npm install && npm start
+
+# Frontend
+cd frontend
+npm install && npm run dev
+
+````
 
 ## Screenshots
 <img width="1920" height="972" alt="screencapture-localhost-5173-2025-09-18-12_27_04" src="https://github.com/user-attachments/assets/333c59e8-60f0-4965-a653-a662f054de1f" />
@@ -32,6 +47,18 @@ A comprehensive Job Portal web application that connects job seekers with employ
 
 
 
+
+##  🔑 Environment Variables (/backend/.env)
+
+```
+PORT=5000
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_secret_key
+CLOUDINARY_CLOUD_NAME=xxxx
+CLOUDINARY_API_KEY=xxxx
+CLOUDINARY_API_SECRET=xxxx
+
+````
 
 
 ## 📋 Usage
