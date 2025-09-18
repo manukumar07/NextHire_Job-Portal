@@ -22,12 +22,16 @@ A comprehensive Job Portal web application that connects job seekers with employ
 
 
 ## Screenshots
-![nexthire](https://github.com/user-attachments/assets/9b22835b-58c3-43ee-82d9-c6a926d3429e)
-![nexthire2](https://github.com/user-attachments/assets/b334c2f6-6bb7-47e3-aef5-39c9234e22ce)
-![nexthire3](https://github.com/user-attachments/assets/ff8aaec2-08c8-4b42-9fdb-e29dc06221d3)
-![nexthire4](https://github.com/user-attachments/assets/312a4312-ab93-4f8a-bc43-4c1f226cc479)
-![nexthire5](https://github.com/user-attachments/assets/324cfc2c-cab1-45d0-b091-3b65aaa8a3db)
-![nexthire6](https://github.com/user-attachments/assets/1d444c81-bdc8-48e4-ad5d-9e2d19685282)
+<img width="1920" height="972" alt="screencapture-localhost-5173-2025-09-18-12_27_04" src="https://github.com/user-attachments/assets/333c59e8-60f0-4965-a653-a662f054de1f" />
+
+<img width="1920" height="1523" alt="screencapture-localhost-5173-signup-2025-09-18-12_27_43" src="https://github.com/user-attachments/assets/92584acb-521b-47a1-8802-74892dfd938f" />
+
+<img width="1920" height="1278" alt="screencapture-localhost-5173-login-2025-09-18-12_27_32" src="https://github.com/user-attachments/assets/5c2cef57-2947-4669-a658-af6443cc7269" />
+
+<img width="1920" height="968" alt="screencapture-localhost-5173-jobs-2025-09-18-12_28_00" src="https://github.com/user-attachments/assets/af48e122-7618-4b29-bf2e-5d916056b35b" />
+
+
+
 
 
 ## 📋 Usage
