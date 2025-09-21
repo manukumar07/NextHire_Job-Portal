@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import { fadeUp, formatNumber } from "../../utils/helpers";

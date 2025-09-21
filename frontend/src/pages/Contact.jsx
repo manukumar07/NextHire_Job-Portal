@@ -1,7 +1,8 @@
+import React from "react";
 import { useState } from "react";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
-import Navbar from "../Components/layout/Navbar";
-import Footer from "../Components/layout/Footer";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
 import { motion } from "framer-motion";
 
 const Contact = () => {

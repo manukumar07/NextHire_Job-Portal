@@ -1,3 +1,4 @@
+import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Components/auth/Login";
 import Signup from "./Components/auth/Signup";
@@ -16,6 +17,8 @@ import AdminJobs from "./Components/admin/AdminJobs";
 import Applicants from "./Components/admin/Applicants";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import ResumeParser from "./Components/ai/ResumerParser";
+import AdminResumes from "./Components/admin/AdminResume";
 
 const appRouter = createBrowserRouter([
   {
@@ -49,6 +52,13 @@ const appRouter = createBrowserRouter([
   {
     path: "/browse",
     element: <Browse />,
+  },
+  {
+    path: "/ai-parser",
+    element: <ResumeParser />,
+  },
+  {
+    path: "#",
   },
   {
     path: "/profile",
@@ -105,6 +115,14 @@ const appRouter = createBrowserRouter([
     element: (
       <ProtectedRoute>
         <Applicants />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/admin/resumes",
+    element: (
+      <ProtectedRoute>
+        <AdminResumes />
       </ProtectedRoute>
     ),
   },

@@ -1,9 +1,10 @@
+import React from "react";
 import { useEffect } from "react";
-import Navbar from "../Components/layout/Navbar";
+import Navbar from "../components/layout/Navbar";
 import HeroSection from "../Components/sections/HeroSection";
 import CategoryCarousel from "../Components/sections/CategoryCarousel";
 import LatestJobs from "../Components/jobs/LatestJobs";
-import Footer from "../Components/layout/Footer";
+import Footer from "../components/layout/Footer";
 import useGetAllJobs from "../hooks/useGetAllJobs";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";

@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect } from "react";
 import Navbar from "../layout/Navbar";
 import ApplicantsTable from "./ApplicantsTable";

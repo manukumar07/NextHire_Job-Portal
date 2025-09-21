@@ -1,3 +1,4 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaBookmark } from "react-icons/fa";
 import { getRandomColor } from "../../utils/helpers";

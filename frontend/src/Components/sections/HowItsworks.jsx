@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { UserPlus, Briefcase, Send } from "lucide-react";
 

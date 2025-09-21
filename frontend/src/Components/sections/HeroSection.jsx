@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { Search, Briefcase } from "lucide-react";
 import { useDispatch } from "react-redux";

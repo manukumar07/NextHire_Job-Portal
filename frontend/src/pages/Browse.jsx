@@ -1,10 +1,11 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import Job from "../Components/jobs/Job";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchedQuery } from "../redux/jobSlice";
 import useGetAllJobs from "../hooks/useGetAllJobs";
 import { FaBriefcase, FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import Navbar from "../Components/layout/Navbar";
+import Navbar from "../components/layout/Navbar";
 
 const Browse = () => {
   useGetAllJobs();

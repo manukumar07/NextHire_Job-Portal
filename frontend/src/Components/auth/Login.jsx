@@ -1,5 +1,5 @@
+import React from "react";
 import { useState, useEffect } from "react";
-import Navbar from "../layout/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { Loader2, Mail, Lock } from "lucide-react"; // Added icons
@@ -7,6 +7,7 @@ import Footer from "../layout/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading, setUser } from "../../redux/authSlice";
 import axios from "axios";
+import Navbar from "../layout/Navbar";
 
 const Login = () => {
   const [input, setInput] = useState({

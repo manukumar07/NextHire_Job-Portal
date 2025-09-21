@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { FaMedal, FaUsers, FaBriefcase } from "react-icons/fa";
 import Navbar from "../components/layout/Navbar";

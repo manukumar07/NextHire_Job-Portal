@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -68,12 +69,21 @@ const Navbar = () => {
                     Jobs
                   </Link>
                 </li>
+
                 <li>
                   <Link
                     to="/admin/companies"
                     className="hover:text-[#F59E0B] transition-colors"
                   >
                     Companies
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/admin/resumes"
+                    className="hover:text-[#F59E0B] transition-colors"
+                  >
+                    Resumes
                   </Link>
                 </li>
               </>

@@ -6,11 +6,18 @@ import userRoutes from "./routes/userRoutes.js";
 import companyRoutes from "./routes/companyRoutes.js";
 import jobRoutes from "./routes/jobRoutes.js";
 import applicationRoutes from "./routes/applicationRoutes.js";
-const app = express();
+import resumeRoutes from "./routes/resumeRoutes.js";
+import fs from "fs";
+import path from "path";
 import dotenv from "dotenv";
 dotenv.config();
 
-//configure cors
+const filePath = path.join(process.cwd(), "test", "data", "05-versions-space.pdf");
+const pdfBuffer = fs.readFileSync(filePath);
+
+const app = express();
+
+// Configure CORS
 app.use(
   cors({
     origin: "http://localhost:5173",
@@ -18,22 +25,28 @@ app.use(
   })
 );
 
-//define port
-const PORT = process.env.PORT || 8000;
-
-//
+// Parse JSON and URL-encoded bodies
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// Api routes
+// API routes
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/company", companyRoutes);
 app.use("/api/v1/job", jobRoutes);
 app.use("/api/v1/application", applicationRoutes);
+app.use("/api/resumes", resumeRoutes);
 
-connectDB();
-//listen port
-app.listen(PORT, () => {
-  console.log(`Server running at port ${PORT}`);
-});
+
+// Connect to DB and start server
+const PORT = process.env.PORT || 8000;
+
+connectDB()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server running at port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("Database connection failed:", err);
+  });
